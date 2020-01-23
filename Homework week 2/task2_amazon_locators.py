@@ -9,8 +9,8 @@ driver = webdriver.Chrome(chrome_options=chrome_options)
 
 # open the url
 driver.get('https://www.amazon.com')
-search_button = driver.find_element(By.XPATH, "//div[@id='nav-signin-tooltip']//a[@class='nav-action-button'][@data-nav-role='signin']")
 sleep(2)
+search_button = driver.find_element(By.XPATH, "//div[@id='nav-signin-tooltip']//a[@class='nav-action-button'][@data-nav-role='signin']")
 search_button.click()
 
 
