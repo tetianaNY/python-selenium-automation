@@ -32,7 +32,7 @@ search_need_h_link = driver.find_element(By.XPATH, "//div[@class='a-section']//s
 search_create_account = driver.find_element(By.XPATH, "//a[@id='createAccountSubmit']")
 
 # Conditions of use link
-search_conditions_of_use = driver.find_element(By.XPATH, "//div[@id='legalTextRow']//a[@href='/gp/help/customer/display.html/ref=ap_signin_notification_condition_of_use?ie=UTF8&nodeId=508088']")
+search_conditions_of_use = driver.find_element(By.XPATH, "//div[@id='legalTextRow']//a[text()='Conditions of Use']")
 
 # Privace notice link
 search_privace_notice = driver.find_element(By.XPATH, "//div[@id='legalTextRow']//a[@href='/gp/help/customer/display.html/ref=ap_signin_notification_privacy_notice?ie=UTF8&nodeId=468496']")
