@@ -18,6 +18,7 @@ search = driver.find_element(By.XPATH, "//div[@class='a-row']//input[@type='sear
 search.clear()
 search.send_keys('cancel order')
 driver.find_element(By.XPATH, "//div[@class='a-column a-span2 a-span-last']//input[@class='a-button-input']").click()
+sleep(2)
 
 assert 'Cancel Items or Orders' in driver.find_element(By.XPATH, "//div[@class='a-box a-spacing-extra-large a-color-offset-background answer-box']").text
 
