@@ -4,7 +4,7 @@ from time import sleep
 
 SEARCH_INPUT_LC = (By.XPATH, "//div[@class='a-row']//input[@type='search']")
 SEARCH_BUTTON_LC = (By.XPATH, "//div[@class='a-column a-span2 a-span-last']//input[@class='a-button-input']")
-HEADER_GOODS_PAGE_LC = (By.XPATH, "//div[@class='a-box a-spacing-extra-large a-color-offset-background answer-box']")
+HEADER_GOODS_PAGE_LC = (By.CSS_SELECTOR, "p.a-color-secondary b")
 
 @given('Open Amazon help')
 def open_amazon(context):
