@@ -23,6 +23,6 @@ def click_search(context):
     amazon_button.click()
     sleep(2)
 
-@then('Assert {search_t} on the page')
+@then('Find {search_t} on the page')
 def check_goods_page(context, search_t):
     assert 'Cancel Order' in context.driver.find_element(*HEADER_GOODS_PAGE_LC).text
