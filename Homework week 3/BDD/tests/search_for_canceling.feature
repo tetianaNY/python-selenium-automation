@@ -1,10 +1,8 @@
 # Created by tetyanakuzmyna at 2/1/20
-  Feature: Cancel Order search
-  # Enter feature description here
+Feature: Cancel Order search
 
   Scenario: User can search for Cancelling an order on Amazon
-  Given Open Amazon main page
-  When Search input enter Cancel Order
-  And Click on search
-  Then Assert Cancel Order on the page
-    # Enter steps here
+    Given Open Amazon help
+    When Search input enter Cancel Order
+    And Click on search
+    Then Assert Cancel Order on the page
