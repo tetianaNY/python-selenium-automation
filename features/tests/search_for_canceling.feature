@@ -5,4 +5,4 @@ Feature: Cancel Order search
     Given Open Amazon help
     When Search input enter Cancel Order
     And Click on search
-    Then Assert Cancel Order on the page
+    Then Find Cancel Order on the page
