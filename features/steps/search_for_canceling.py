@@ -10,19 +10,19 @@ HEADER_GOODS_PAGE_LC = (By.XPATH, "//div[@class='a-box a-spacing-extra-large a-c
 def open_amazon(context):
     context.driver.get('https://www.amazon.com/gp/help/customer/display.html')
 
-@when('Search input enter {search_text}')
-def search_input_enter(context, search_text):
-    amazon_search_input = context.driver.find_element(*SEARCH_INPUT_LC)
-    amazon_search_input.clear()
-    amazon_search_input.send_keys(search_text)
+@when('Search input enter {search_t}')
+def search_input_enter(context, search_t):
+    amazon_search = context.driver.find_element(*SEARCH_INPUT_LC)
+    amazon_search.clear()
+    amazon_search.send_keys(search_t)
     sleep(4)
 
 @when('Click on search')
 def click_search(context):
-    amazon_search_button = context.driver.find_element(*SEARCH_BUTTON_LC)
-    amazon_search_button.click()
+    amazon_button = context.driver.find_element(*SEARCH_BUTTON_LC)
+    amazon_button.click()
     sleep(2)
 
-@then('Assert {search_text} on the page')
-def check_goods_page(context, search_text):
-    assert search_text in context.driver.find_element(*HEADER_GOODS_PAGE_LC).text
+@then('Assert {search_t} on the page')
+def check_goods_page(context, search_t):
+    assert 'Cancel Order' in context.driver.find_element(*HEADER_GOODS_PAGE_LC).text
