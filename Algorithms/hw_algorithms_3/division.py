@@ -1,4 +1,5 @@
 
+# деление num1 на num2 с точностью accur
 
 def devision(num1, num2, accur):
 
@@ -34,17 +35,14 @@ def devision(num1, num2, accur):
         for q in range(float_index-1):
           float_result.append('0')
 
-      print(i)
 
 
 # вычитаем и записываем в список количество вычитаний на этом десятке
       while num1_2 >= num2:
           num1_2 = num1_2 - num2
           count2 += 1
-      # print(count2)
       float_result.append(str(count2))
 
-    print(float_result)
     result = str(count)
     result += '.'
     result += ''.join(float_result)
