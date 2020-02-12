@@ -1,6 +1,9 @@
 
 
 def devision(num1, num2, accur):
+
+# считаем целые или возвращаем 0
+
     count = 0
     result = ''
     while num1 >= num2:
@@ -18,11 +21,12 @@ def devision(num1, num2, accur):
     for i in range(accur):
       float_index = 0
       count2 = 0
-# умножаем на 10 для вычитания, сколько раз умножили столько раз
 
+# умножаем на 10 для вычитания
       while num1_2 <= num2:
           num1_2 *= 10
           float_index += 1
+          if num1_2 == 0: break
 
 # добавляем 0, после запятой, если нет возможности поделить на цело
       q = 1
@@ -30,9 +34,10 @@ def devision(num1, num2, accur):
         for q in range(float_index-1):
           float_result.append('0')
 
+      print(i)
+
 
 # вычитаем и записываем в список количество вычитаний на этом десятке
-
       while num1_2 >= num2:
           num1_2 = num1_2 - num2
           count2 += 1
@@ -46,5 +51,5 @@ def devision(num1, num2, accur):
 
     return result
 
-print("The total is", devision(1000, 178, 20))
+print("The total is", devision(1, 1777, 100))
 
