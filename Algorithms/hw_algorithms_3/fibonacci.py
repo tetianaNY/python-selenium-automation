@@ -4,9 +4,9 @@ def fibonacci(n):
     fib_2 = 1
     i = 0
     if n == 1:
-        print(fib_1)
+        return fib_1
     if n == 2:
-        print(fib_2)
+        return fib_2
 
     while i < n - 2:
         fib_total = fib_1 + fib_2
@@ -14,7 +14,7 @@ def fibonacci(n):
         i += 1
     return fib_total
 
-print(fibonacci(20))
+print(fibonacci(8))
 
 
 
