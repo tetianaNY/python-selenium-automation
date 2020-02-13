@@ -29,6 +29,7 @@ def devision(num1, num2, accur):
       while num1_2 <= num2:
           num1_2 *= 10
           float_index += 1
+          # print(float_index)
           if num1_2 == 0: break
 
 # добавляем 0, после запятой, если нет возможности поделить нАцело. (Вычесть с положительным остатком)
@@ -54,5 +55,5 @@ def devision(num1, num2, accur):
 
     return result[:len(result)-count_0]
 
-print("The total is", devision(1, 50, 100))
+print("The total is", devision(1, 177, 100))
 
