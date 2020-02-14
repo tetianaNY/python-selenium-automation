@@ -7,3 +7,4 @@ Feature: History book count scenario
     When Input history book
     And Search history books
     Then Count result
+    And Add first book to the cart if price more than 10 dollars
