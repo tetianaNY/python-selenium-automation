@@ -1,5 +1,5 @@
 # Created by tetyanakuzmyna at 2/14/20
-Feature: History book count scenario
+Feature: History book count
 
 
   Scenario: User search books and count result on search page
