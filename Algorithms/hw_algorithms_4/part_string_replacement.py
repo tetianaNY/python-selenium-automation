@@ -1,6 +1,6 @@
-string = input('Input string: ')
-part = input('Input replacement part of string (the part have to be <= string and not empty): ')
-replace = input('Input part to replace (the part have to be not empty): ')
+string = input('Input the string: ')
+part = input('Input a replacement part of the string (the part have to be <= string and not empty): ')
+replace = input('Input a new part to replace (the part have to be not empty): ')
 
 if len(part) >= len(string) or part == '' or replace == '':
     print('Inputs does not match input conditions')
