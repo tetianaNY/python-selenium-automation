@@ -9,6 +9,7 @@ if len(part) >= len(string) or part == '' or replace == '':
 def string_replacement(string, part, replace):
     string = string.upper()
     part = part.upper()
+    replace = replace.upper()
     i = 0
     for i in range(len(string)):
         if string[i:i+(len(part))] == part:
