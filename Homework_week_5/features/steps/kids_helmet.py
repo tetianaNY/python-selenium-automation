@@ -1,8 +1,11 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
+from time import sleep
 
 COLOR_LOCATOR = (By.CSS_SELECTOR, '#variation_color_name ul[role="radiogroup"] li')
 COLOR_TITLE_LOCATOR = (By.CSS_SELECTOR, '#variation_color_name .selection')
+ADD_TO_CRT = (By.CSS_SELECTOR, '#add-to-cart-button')
+HELMET_CLICK = (By.NAME, 'submit.add-to-cart')
 
 @given('Open Amazon kids helmet page')
 def open_helmet_page(context):
@@ -14,11 +17,27 @@ def get_all_helmet_colors(context):
 
 @then('Check every color has a description')
 def description_check(context):
-    color_title = context.driver.find_element(*COLOR_TITLE_LOCATOR)
-    print(context)
+    context.color_title = context.driver.find_element(*COLOR_TITLE_LOCATOR)
     for color in context.helmets_color:
         color.click()
-        assert color_title.text in color.get_attribute('title'), f"Expected {color_title.text} in {color.get_attribute('title')}"
+        print(context.color_title.text)
+        assert context.color_title.text in color.get_attribute('title'), f"Expected {color_title.text} in {color.get_attribute('title')}"
+
+# @then('Add to the crt')
+# def add_to_crt(context):
+#     for color in context.helmets_color:
+#         color.click()
+#         if context.color_title.text == "BLUE":
+#             print(context.color_title.text)
+#             sleep(3)
+#             add_to_crt = context.driver.find_element(*ADD_TO_CRT)
+#             add_to_crt.click()
+
+
+
+
+
+
 
 
 
