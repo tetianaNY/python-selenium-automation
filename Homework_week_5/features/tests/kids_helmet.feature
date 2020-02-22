@@ -6,6 +6,7 @@ Feature: #Enter feature name here
     Given Open Amazon kids helmet page
     When  Get all helmets color
     Then  Check every color has a description
+#    And   Add to the crt
 
 
     # Enter steps here
