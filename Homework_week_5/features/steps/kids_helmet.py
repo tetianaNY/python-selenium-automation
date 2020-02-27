@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
+from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 COLOR_LOCATOR = (By.CSS_SELECTOR, '#variation_color_name ul[role="radiogroup"] li')
@@ -23,15 +24,17 @@ def description_check(context):
         print(context.color_title.text)
         assert context.color_title.text in color.get_attribute('title'), f"Expected {color_title.text} in {color.get_attribute('title')}"
 
-# @then('Add to the crt')
-# def add_to_crt(context):
-#     for color in context.helmets_color:
-#         color.click()
-#         if context.color_title.text == "BLUE":
-#             print(context.color_title.text)
-#             sleep(3)
-#             add_to_crt = context.driver.find_element(*ADD_TO_CRT)
-#             add_to_crt.click()
+@then('Add to the crt')
+def add_to_crt(context):
+    for color in context.helmets_color:
+        if context.color_title.text == "BLUE":
+            print(context.color_title.text)
+            color.click()
+            # sleep(3)
+            add_to_crt = context.wait.until(EC.element_to_be_clickable(ADD_TO_CRT))
+            # add_to_crt = context.driver.find_element(*ADD_TO_CRT)
+            add_to_crt.click()
+            break
 
 
 
