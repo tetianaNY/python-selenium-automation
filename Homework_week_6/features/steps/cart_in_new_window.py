@@ -36,8 +36,9 @@ def blog_link_and_new_page_open(context):
     # Так как нет товаров в блоге, кликаем на ссылку на основной сайт амазона и открывается 3-е окно
     amazon2 = context.driver.find_element(*AMAZON_LINK)
     amazon2.click()
+    context.driver.close()
     context.all_windows = context.driver.window_handles
-    context.driver.switch_to.window(context.all_windows[2])
+    context.driver.switch_to.window(context.all_windows[1])
 
 @when('Open deal of the day, choose first item')
 def deal_of_the_day(context):
@@ -51,6 +52,7 @@ def add_to_the_cart(context):
     # Проверка наличия кнонки добавить в корзину или 'See details'
     if len(context.driver.find_elements(*CART_BUTTON)) < 1:
         context.driver.find_element(*SEE_DETAIL_OPTION).click()
+    context.wait.until(EC.element_to_be_clickable(CART_BUTTON))
     context.driver.find_element(*CART_BUTTON).click()
     # определение вылетающих окон с гарантиями
     WW1 = context.driver.find_elements(*WARRANTY_WINDOW1)
@@ -63,8 +65,11 @@ def add_to_the_cart(context):
 
 @then('Switch back to original')
 def switch_to_original(context):
+    context.driver.close()
     context.driver.switch_to.window(context.all_windows[0])
     context.driver.refresh()
+
+
 
 @then('Check goods in he cart')
 def check_goods_in_yhe_cart(context):
