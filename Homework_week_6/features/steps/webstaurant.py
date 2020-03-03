@@ -30,6 +30,7 @@ def looking_for_something(context, q):
 @then('Add last item to the cart')
 def add_last_item(context):
     context.driver.find_elements(*PRODUCT_LIST)[len(context.products)-1].click()
+    context.wait.until(EC.visibility_of_element_located(BUY_BUTTON))
     context.driver.find_element(*BUY_BUTTON).click()
 @then('Empty cart')
 def empty_cart(context):
