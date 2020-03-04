@@ -18,6 +18,7 @@ WARRANTY_WINDOW1 = (By.ID, 'a-popover-content-8')
 WW1_CLOSE = (By.ID, 'siNoCoverage-announce')
 WARRANTY_WINDOW2 = (By.ID, 'attach-warranty-pane')
 WW2_CLOSE = (By.ID, 'attachSiNoCoverage-announce')
+AUTO_DELIVERIES = (By.CSS_SELECTOR, '.a-accordion-row.a-declarative i.a-icon-radio-inactive')
 
 CART_LOCATOR = (By.CSS_SELECTOR, '#nav-cart')
 CART_1ITEM_LOCATOR = (By.ID, 'sc-subtotal-label-activecart')
@@ -50,8 +51,11 @@ def deal_of_the_day(context):
 @then('Add goods to the cart')
 def add_to_the_cart(context):
     # Проверка наличия кнонки добавить в корзину или 'See details'
+    print(len(context.driver.find_elements(*CART_BUTTON)))
     if len(context.driver.find_elements(*CART_BUTTON)) < 1:
         context.driver.find_element(*SEE_DETAIL_OPTION).click()
+    print(len(context.driver.find_elements(*CART_BUTTON)))
+    context.driver.find_element(*AUTO_DELIVERIES).click()
     context.wait.until(EC.element_to_be_clickable(CART_BUTTON))
     context.driver.find_element(*CART_BUTTON).click()
     # определение вылетающих окон с гарантиями
