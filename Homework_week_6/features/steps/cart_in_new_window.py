@@ -44,6 +44,7 @@ def blog_link_and_new_page_open(context):
 @when('Open deal of the day, choose first item')
 def deal_of_the_day(context):
     context.driver.find_element(*DEAL_OF_THE_DAY).click()
+    context.wait.until(EC.element_to_be_clickable(AMAZON_DEVICES_FIRST))
     context.driver.find_element(*AMAZON_DEVICES_FIRST).click()
 
 # Здесь обработка 2-х различных вариантов "Deal of the day" с "add to cart button" и "see datail"
@@ -51,11 +52,10 @@ def deal_of_the_day(context):
 @then('Add goods to the cart')
 def add_to_the_cart(context):
     # Проверка наличия кнонки добавить в корзину или 'See details'
-    print(len(context.driver.find_elements(*CART_BUTTON)))
     if len(context.driver.find_elements(*CART_BUTTON)) < 1:
         context.driver.find_element(*SEE_DETAIL_OPTION).click()
-    print(len(context.driver.find_elements(*CART_BUTTON)))
-    context.driver.find_element(*AUTO_DELIVERIES).click()
+    if len(context.driver.find_elements(*AUTO_DELIVERIES)) > 0:
+        context.driver.find_element(*AUTO_DELIVERIES).click()
     context.wait.until(EC.element_to_be_clickable(CART_BUTTON))
     context.driver.find_element(*CART_BUTTON).click()
     # определение вылетающих окон с гарантиями
