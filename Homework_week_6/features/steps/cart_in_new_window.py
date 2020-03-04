@@ -54,6 +54,7 @@ def add_to_the_cart(context):
     # Проверка наличия кнонки добавить в корзину или 'See details'
     if len(context.driver.find_elements(*CART_BUTTON)) < 1:
         context.driver.find_element(*SEE_DETAIL_OPTION).click()
+    # Проверка, если товар предлагает автоделивери, выбираем разовую покупку
     if len(context.driver.find_elements(*AUTO_DELIVERIES)) > 0:
         context.driver.find_element(*AUTO_DELIVERIES).click()
     context.wait.until(EC.element_to_be_clickable(CART_BUTTON))
