@@ -4,6 +4,8 @@ from Homework_week_7.pages.base_page import Page
 class MainPage(Page):
     ORDERS_LOCATOR = (By.CSS_SELECTOR, '#nav-orders .nav-line-2')
     CART_LOCATOR = (By.CSS_SELECTOR, '#nav-cart')
+    HAMBURGER_MENU = (By.CSS_SELECTOR, '#nav-hamburger-menu')
+    HAMBURGER_SUBMENU = (By.CSS_SELECTOR, '.hmenu.hmenu-visible a[data-menu-id="3"]')
 
 
     def open(self):
@@ -14,6 +16,12 @@ class MainPage(Page):
 
     def open_cart(self):
         self.click(*self.CART_LOCATOR)
+
+    def open_hamburger_menu(self):
+        self.click(*self.HAMBURGER_MENU)
+
+    def open_hamburger_submenu(self):
+        self.click(*self.HAMBURGER_SUBMENU)
 
 
 
