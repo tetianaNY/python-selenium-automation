@@ -22,5 +22,13 @@ class Page:
         actual_text = self.driver.find_element(*locator).text
         assert expected_text == actual_text, f'Expected text {expected_text}, but got {actual_text}'
 
+    def verify_menu_items(self, expected: str, *locator):
+        total = str(len(self.driver.find_elements(*locator)))
+        assert expected in total, f'Expected text {expected}, but got {total}'
+
+    def wait_for_element_appear(self, *locator):
+        self.driver.wait.until(EC.presence_of_element_located(*locator))
+
+
 
 
