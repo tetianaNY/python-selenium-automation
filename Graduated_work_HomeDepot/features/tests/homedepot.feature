@@ -1,20 +1,20 @@
 # Created by tetyanakuzmyna at 3/5/20
 Feature: HomeDepot project
-#
-#
-#  Scenario Outline: Verify that Auto-suggestion works
-#    Examples:
-#    |search_word      |
-#    |hammer           |
-#    |plier            |
-#    |pry bar          |
-#    |lawn mower       |
-#
-#
-#    Given Open HomeDepot page
-#    When Enter <search_word> to the search box
-#    Then Count <search_word> on the page
-#
+
+
+  Scenario Outline: Verify that Auto-suggestion works
+    Examples:
+    |search_word      |
+    |hammer           |
+    |plier            |
+    |pry bar          |
+    |lawn mower       |
+
+
+    Given Open HomeDepot page
+    When Enter <search_word> to the search box
+    Then Count <search_word> on the page
+
 #  Scenario: User is taken to the search results page
 #    Given Open HomeDepot page
 #    When Insert dry vacuum in search field
@@ -77,14 +77,14 @@ Feature: HomeDepot project
 #    And Click cart button
 #    And Change quantity from 1 to 2
 #    And Expected items in cart will be 2
-
-
-  Scenario: User is able to write a review
-    Given Open HomeDepot page
-    When Insert hammer in search field
-    And Click search button or click enter button
-    And On search results page choose something and click it
-    Then Expected product has "write review" button
+#
+#
+#  Scenario: User is able to write a review
+#    Given Open HomeDepot page
+#    When Insert hammer in search field
+#    And Click search button or click enter button
+#    And On search results page choose something and click it
+#    Then Expected product has "write review" button
 
 
 
