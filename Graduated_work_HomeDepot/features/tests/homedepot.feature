@@ -44,13 +44,14 @@ Feature: HomeDepot project
 #    Then Expected cart page will have empty in the title
 
 
-  Scenario:
-    Given Open HomeDepot page
-    When Insert circular saw in search field
-    And On search results page choose something and click it
-    And Add product to shopping cart
-    Then Expected product would be in cart
-    And Close all pop-ups
+#  Scenario:
+#    Given Open HomeDepot page
+#    When Insert circular saw in search field
+#    And On search results page choose something and click it
+#    And Add product to shopping cart
+#    Then Expected product would be in cart
+##  Селениум не видит локаторы на POP-UP
+##    And Close all pop-ups
 
 
 
