@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from Graduated_work_HomeDepot.pages.base_page import Page
+from time import sleep
 
 class ResultsPage(Page):
     ORIGINAL_KEYWORD_H1 = (By.CSS_SELECTOR, "h1 .original-keyword")
@@ -18,7 +19,8 @@ class ResultsPage(Page):
     FIRST_SEARCH_ITEM = (By.CSS_SELECTOR, '.js-pod')
     ADD_TO_CART_FOR_DELIVERY = (By.CSS_SELECTOR, '#atc_shipIt')
     POPUP_ROOT = (By.CSS_SELECTOR, '#root')
-    EXPECTED_ITEM_IN_THE_CART = (By.CSS_SELECTOR, '[data-automation-id="viewCartLink"]')
+    EXPECTED_ITEM_IN_THE_CART = (By.CSS_SELECTOR, '#headerCart .MyCart__itemCount')
+    POPUP_CLICKABLE_CART_ITEM = (By.CSS_SELECTOR, '[data-automation-id="viewCartLink"]')
     POPUP_WITH_ITEM_IN_CART = (By.CSS_SELECTOR, '[data-automation-id="closeAddToCartOverlay"]')
 
     def verify_header_result(self, text):
@@ -78,8 +80,9 @@ class ResultsPage(Page):
         self.click(*self.ADD_TO_CART_FOR_DELIVERY)
 
     def item_in_the_cart_result(self, text: str):
-        self.wait_for_element_appear(self.POPUP_ROOT)
-        # self.wait_for_element_appear(self.EXPECTED_ITEM_IN_THE_CART)
+        sleep(4)
+        # self.wait_for_element_click(self.POPUP_WITH_ITEM_IN_CART)
+        # self.wait_for_element_appear(self.POPUP_WITH_ITEM_IN_CART)
         self.verify_text_in(text, *self.EXPECTED_ITEM_IN_THE_CART)
 
     def popup_with_item_in_the_cart(self):
