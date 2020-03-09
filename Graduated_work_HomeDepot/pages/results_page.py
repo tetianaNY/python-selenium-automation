@@ -80,7 +80,7 @@ class ResultsPage(Page):
         self.click(*self.FIRST_SEARCH_ITEM)
 
     def add_to_cart_for_delivery(self):
-        self.wait_for_element_click(self.ADD_TO_CART_FOR_DELIVERY)
+        self.wait_for_element_appear(self.ADD_TO_CART_FOR_DELIVERY)
         self.click(*self.ADD_TO_CART_FOR_DELIVERY)
 
     def item_in_the_cart_result(self, text: str):
