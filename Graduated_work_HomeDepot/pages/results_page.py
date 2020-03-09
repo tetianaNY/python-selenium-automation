@@ -98,8 +98,9 @@ class ResultsPage(Page):
         self.back()
 
     def second_page_first_search_result_open(self):
+        self.wait_for_element_click(self.SECOND_PAGE_SEARCH_RESULT_LINK)
         self.click(*self.SECOND_PAGE_SEARCH_RESULT_LINK)
-        self.wait_for_element_appear(self.FIRST_SEARCH_ITEM)
+        self.wait_for_element_click(self.FIRST_SEARCH_ITEM)
         self.click(*self.FIRST_SEARCH_ITEM)
 
     def click_cart_button(self):
