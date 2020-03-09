@@ -22,6 +22,7 @@ class ResultsPage(Page):
     EXPECTED_ITEM_IN_THE_CART = (By.CSS_SELECTOR, '#headerCart .MyCart__itemCount')
     POPUP_CLICKABLE_CART_ITEM = (By.CSS_SELECTOR, '[data-automation-id="viewCartLink"]')
     POPUP_WITH_ITEM_IN_CART = (By.CSS_SELECTOR, '[data-automation-id="closeAddToCartOverlay"]')
+    SECOND_PAGE_SEARCH_RESULT_LINK = (By.CSS_SELECTOR, '.grid .hd-pagination__link[title="2"]')
 
     def verify_header_result(self, text):
         self.wait_for_element_appear(self.ORIGINAL_KEYWORD_H1)
@@ -87,6 +88,17 @@ class ResultsPage(Page):
 
     def popup_with_item_in_the_cart(self):
         self.click(*self.POPUP_WITH_ITEM_IN_CART)
+
+    def twice_browser_back(self):
+        sleep(4)
+        self.back()
+        self.back()
+
+    def second_page_first_search_result_open(self):
+        self.click(*self.SECOND_PAGE_SEARCH_RESULT_LINK)
+        self.wait_for_element_appear(self.FIRST_SEARCH_ITEM)
+        self.click(*self.FIRST_SEARCH_ITEM)
+
 
 
 
