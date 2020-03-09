@@ -6,7 +6,7 @@ class MainPage(Page):
     SEARCH_BOX_LOCATOR = (By.CSS_SELECTOR, '#headerSearch')
     SEARCH_BUTTON_LOCATOR = (By.CSS_SELECTOR, '#headerSearchButton')
     ACCOUNT_BUTTON_LOCATOR = (By.CSS_SELECTOR, '#headerMyAccount')
-    REGISTER_BUTTON_LOCATOR = (By.CSS_SELECTOR, 'a.bttn-outline .bttn__content')
+    REGISTER_BUTTON_LOCATOR = (By.CSS_SELECTOR, '#SPSORegister a.bttn-outline .bttn__content')
     SIGN_IN_BUTTON_LOCATOR = (By.CSS_SELECTOR, '#SPSOSignIn a.bttn--primary .bttn__content')
     SUGGESTIONS_CONTAINER = (By.CSS_SELECTOR, '#typeAheadFlyOut a')
     SUGGESTIONS_LOCATOR = (By.CSS_SELECTOR, '#typeAheadFlyOut a:not(.categories)')
