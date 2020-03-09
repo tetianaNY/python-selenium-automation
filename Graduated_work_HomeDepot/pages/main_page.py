@@ -28,15 +28,15 @@ class MainPage(Page):
         self.click(*self.ACCOUNT_BUTTON_LOCATOR)
 
     def register_button_click(self):
-        self.wait_for_element_appear(self.REGISTER_BUTTON_LOCATOR)
+        self.wait_for_element_click(self.REGISTER_BUTTON_LOCATOR)
         self.click(*self.REGISTER_BUTTON_LOCATOR)
 
     def sign_in_button_click(self):
-        self.wait_for_element_appear(self.SIGN_IN_BUTTON_LOCATOR)
+        self.wait_for_element_click(self.SIGN_IN_BUTTON_LOCATOR)
         self.click(*self.SIGN_IN_BUTTON_LOCATOR)
 
     def cart_button_click(self):
-        self.wait_for_element_appear(self.CART_BUTTON)
+        self.wait_for_element_click(self.CART_BUTTON)
         self.click(*self.CART_BUTTON)
 
     def counting_result(self, text: str):
