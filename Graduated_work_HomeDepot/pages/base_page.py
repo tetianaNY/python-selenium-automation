@@ -15,11 +15,14 @@ class Page:
         e = self.driver.find_element(*locator)
         e.clear()
         e.send_keys(text)
-    #
-    # def wait_for_element_click(self, *locator):
-    #     e = self.driver.wait.until(EC.element_to_be_clickable(locator))
-    #     e.click()
-    #
+
+    def back(self):
+        self.driver.back()
+
+    def wait_for_element_click(self, *locator):
+        self.driver.wait.until(EC.element_to_be_clickable(*locator))
+
+
     def click(self, *locator):
         self.driver.find_element(*locator).click()
 
@@ -33,10 +36,12 @@ class Page:
 
     def verify_text_in(self, text: str, *locator):
         actual_text = self.driver.find_element(*locator).text
+        print(actual_text)
         assert text in actual_text, f'Operation was not successful'
 
     def wait_for_element_appear(self, *locator):
         self.driver.wait.until(EC.presence_of_element_located(*locator))
+
 
 
 
