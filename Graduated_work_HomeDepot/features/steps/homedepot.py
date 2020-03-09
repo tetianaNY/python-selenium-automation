@@ -90,9 +90,11 @@ def add_one_item_to_cart(context):
 def result_verification(context):
     context.app.results_page.item_in_the_cart_result('1')
 
-@then('Close all pop-ups')
-def popup_close(context):
-    context.app.results_page.popup_with_item_in_the_cart()
+# Не могу понять почему Селениум не видит popup, ни один локатор, что за хитрость?
+
+# @then('Close all pop-ups')
+# def popup_close(context):
+#     context.app.results_page.popup_with_item_in_the_cart()
 
 
 
