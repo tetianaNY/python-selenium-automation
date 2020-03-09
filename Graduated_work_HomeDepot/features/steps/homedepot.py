@@ -38,10 +38,10 @@ def click_register(context):
 # Prior to run the test change e-mail (just add 1 to the name) and phone number (change 1 digit)
 @when('Fill all fields with fake data')
 def registration_form(context):
-    context.app.results_page.registration_form_email('seniorus_pomidorus1@korolevstvo.nyc')
+    context.app.results_page.registration_form_email('seniorus_pomidorus99@korolevstvo.nyc')
     context.app.results_page.registration_form_password('Zxcvb!234')
     context.app.results_page.registration_form_zipcode('07093')
-    context.app.results_page.registration_form_phone('2015553257')
+    context.app.results_page.registration_form_phone('2015673267')
     context.app.results_page.phone_checkbox()
     # context.app.results_page.ispro_checkbox()
 
@@ -104,7 +104,8 @@ def twice_back(context):
 
 @when('On search results page choose another product and click it')
 def new_search_result(context):
-    context.app.results_page.second_page_first_search_result_open()
+    context.app.results_page.first_search_result_open()
+    # context.app.results_page.second_page_first_search_result_open()
 
 @then('Expected products would be in cart')
 def second_result_verification(context):
