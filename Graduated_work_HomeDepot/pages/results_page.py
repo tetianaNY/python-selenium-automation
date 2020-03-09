@@ -17,7 +17,7 @@ class ResultsPage(Page):
     SIGN_IN_RESULT = (By.CSS_SELECTOR, '#headerMyAccountTitle')
     EMPTY_CART_RESULT = (By.CSS_SELECTOR, '[data-automation-id="appEmptyShoppingCartText"]')
     FIRST_SEARCH_ITEM = (By.CSS_SELECTOR, '.js-pod')
-    ADD_TO_CART_FOR_DELIVERY = (By.CSS_SELECTOR, 'button[id="atc_shipIt"]')
+    ADD_TO_CART_FOR_DELIVERY = (By.CSS_SELECTOR, 'div.buybelt__online-wrapper span.bttn__content')
     POPUP_ROOT = (By.CSS_SELECTOR, '#root')
     EXPECTED_ITEM_IN_THE_CART = (By.CSS_SELECTOR, '#headerCart .MyCart__itemCount')
     POPUP_CLICKABLE_CART_ITEM = (By.CSS_SELECTOR, '[data-automation-id="viewCartLink"]')
