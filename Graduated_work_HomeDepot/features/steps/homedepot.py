@@ -92,9 +92,25 @@ def result_verification(context):
 
 # Не могу понять почему Селениум не видит popup, ни один локатор, что за хитрость?
 
-# @then('Close all pop-ups')
-# def popup_close(context):
-#     context.app.results_page.popup_with_item_in_the_cart()
+@then('Close all pop-ups')
+def popup_close(context):
+    context.app.results_page.twice_browser_back()
+    # context.app.results_page.popup_with_item_in_the_cart()
+
+
+@when('Return to product search page')
+def twice_back(context):
+    context.app.results_page.twice_browser_back()
+
+@when('On search results page choose another product and click it')
+def new_search_result(context):
+    context.app.results_page.second_page_first_search_result_open()
+
+@then('Expected products would be in cart')
+def second_result_verification(context):
+    context.app.results_page.item_in_the_cart_result('2')
+
+
 
 
 
